@@ -89,3 +89,20 @@ Plan now is to get as much into config files as possible so that the manual proc
 ## Second Publii install from .deb attempt
 Of course, that didn't work! This time failing during the Gitpod build phase. So I'll remove the dependencies added to Docker and try adding them manually.
 
+### Install Publii dependencies
+sudo apt-get install -y libnotify4 libnss3-dev xdg-utils libappindicator3-1
+
+All installed OK, with prompt for keyboard type - chose UK 30, then option 1. So now back to trying:
+sudo dpkg -i Publii-0.38.2.deb
+
+That seemed to run OK, but how do I start Publii? I'm going to try entering:
+publii
+But it's actually
+Publii
+
+All went well until trying to save settings. Got same error as Chromebook installation, but gnome-keyring and libsecret-1-dev are installed. So how about
+npm install keytar
+
+No difference. So next try taking dependencies back out of docker and run manually.
+
+***
