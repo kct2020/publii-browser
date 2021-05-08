@@ -10,3 +10,12 @@ That link lets me run a browser in Gitpod, as per the conclusion of https://www.
 
 ## Publii Linux Image Download
 Branch gitpod-download. Because I am in the habit of creating a branch for Gitpod.
+
+But Gitpod fails after Reading package lists...
+E: List directory /var/lib/apt/lists/partial is missing. - Acquire (13: Permission denied)
+
+
+Error: build failed: cannot build base image: The command '/bin/sh -c apt-get update     && apt-get install -y firefox matchbox twm     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*' returned a non-zero code: 100
+
+Search result https://github.com/SeleniumHQ/docker-selenium/issues/725 suggests adding sudo in docker file. So I'll try that.
+***
