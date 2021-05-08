@@ -51,7 +51,7 @@ sudo usermod -a -G fuse $user
 More trouble trying to push changes back to GitHub because Publii image download is too big. 
 
 ***
-##Publii install from .deb?
+## Publii install from .deb?
 - Downloaded Publii-0.38.2.deb
 - Proceed with install skipping chmod and running ./Publii-0.38.2.deb
 gives bash: ./Publii-0.38.2.deb: Permission denied
@@ -81,9 +81,11 @@ Errors were encountered while processing:
 
 I'm going to have a break!
 ***
-##Add Publii dependencies to Docker
+## Add Publii dependencies to Docker
 Plan now is to get as much into config files as possible so that the manual procedure is minimal. But first, I'm going back to the previous Gitpod workspace to see if the Publii-0.38.2.deb download will push from Gitpod to GitHub. And that worked! So time to start another Gitpod session.
 
 ***
 
-##Second Publii install from .deb attempt
+## Second Publii install from .deb attempt
+Of course, that didn't work! This time failing during the Gitpod build phase. So I'll remove the dependencies added to Docker and try adding them manually.
+
