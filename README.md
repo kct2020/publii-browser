@@ -81,3 +81,9 @@ Errors were encountered while processing:
 
 I'm going to have a break!
 ***
+##Add Publii dependencies to Docker
+Plan now is to get as much into config files as possible so that the manual procedure is minimal. But first, I'm going back to the previous Gitpod workspace to see if the Publii-0.38.2.deb download will push from Gitpod to GitHub. And that worked! So time to start another Gitpod session.
+
+***
+
+##Second Publii install from .deb attempt
