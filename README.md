@@ -19,3 +19,33 @@ Error: build failed: cannot build base image: The command '/bin/sh -c apt-get up
 
 Search result https://github.com/SeleniumHQ/docker-selenium/issues/725 suggests adding sudo in docker file. So I'll try that.
 ***
+
+Firefox - Preferences set to new folder \u2066/workspace/publii-browser/Downloads\u2069
+Navigated to https://getpublii.com/download/ and downloaded Linux image
+Signed up for newsletter that popped up after downloading.
+
+In new terminal, followed instructions at https://publii-book.pages.dev/welcome-to-publiibook/ (adding sudo apt-get install -y gnome-keyring)
+
+Got error:
+'dlopen(): error loading libfuse.so.2
+
+AppImages require FUSE to run. 
+You might still be able to extract the contents of this AppImage 
+if you run it with the --appimage-extract option. 
+See https://github.com/AppImage/AppImageKit/wiki/FUSE 
+for more information'
+
+From that link, ran:
+sudo apt install -y fuse
+sudo modprobe fuse 
+(but got sudo: modprobe: command not found so ran sudo apt install -y modprobe - giving E: Unable to locate package modprobe. Now, trying to run Publii, FUSE message changes to:
+fusermount: mount failed: Invalid argument
+Cannot mount AppImage, please check your FUSE setup.
+
+So I'll stop here for investigation. )
+
+sudo groupadd fuse
+user="$(whoami)"
+sudo usermod -a -G fuse $user
+
+More trouble trying to push changes back to GitHub because Publii image download is too big.    
